@@ -13,6 +13,7 @@
 
 \usepackage{etoolbox}
 \usepackage{keycommand}
+\usepackage{enumitem}
 \usepackage{xstring}
 \usepackage{hyperref}
 \hypersetup{
@@ -20,6 +21,7 @@
     linkcolor=blue,
     urlcolor=black,
 }
+
 
 % Load the fontspec package to set the font
 \usepackage[scaled]{helvet} % Load the Helvetica font
@@ -39,7 +41,6 @@
 
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}%
 \newcommand{\profilelink}[1]{\href{https://#1}{#1}}%
-\newcommand{\phonelink}[1]{\href{tel:#1}{#1}}%
 
 \newcommand{\isA}[1]{
     \expandafter\ifstrequal\expandafter{#1}{default}{}{a}
@@ -50,7 +51,7 @@
         \textbf{\MakeUppercase{#1}}
         \vspace{0.4em}
         \hrule
-        \vspace{-0.3em}
+        \vspace{0.4em}
     \endgroup
 }%
 
@@ -62,34 +63,18 @@
         \hfill{\MakeUppercase{\Huge\bfseries #1}}\hfill
         \break
         \vspace{-0.5em}
-        \hrule
     \endgroup
 }%
 
 \newkeycommand{\introduction}[
     fullname,
     email,
-    phone,
     linkedin,
     github
 ]{%
     \begin{center}%
         \printNameTitle{\commandkey{fullname}}% Full name title
         {%
-            \expandafter\ifstrequal\expandafter{phone}{}{}% Contact number
-            {%
-                \ifcommandkey{phone}{\phonelink{\commandkey{phone}}}{}
-                \expandafter\ifstrequal\expandafter{email}{}%
-                {%
-                    \expandafter\ifstrequal\expandafter{linkedin}{}%
-                    {%
-                        \expandafter\ifstrequal\expandafter{github}{}%
-                        {%
-                            % empty %
-                        }{\separator}%
-                    }{\separator}%
-                }{\separator}%
-            }% Contact number field ends here
             \expandafter\ifstrequal\expandafter{email}{}{}% Email
             {%
                 \email{\commandkey{email}}%
@@ -130,35 +115,31 @@
 % ------------ Education ------------
 \newenvironment{educationSection}[1]{%
     \sectionTitle{#1}%
-}%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{0em}% no extra indent
+    }%
+    \item[]%
+}{%
+    \end{list}%
+}
 
 \newkeycommand{\educationItem}[
     university,
-    college,
-    program,
     graduation,
     grade,
-    coursework
-]{%
+    program,
+]{% 
     {% line 1
-        \bf \commandkey{program}%
+        \bf \commandkey{university}%
     } \hfill {%
-        Graduating \commandkey{graduation}%
+        \bf \commandkey{graduation}%
     } \\ % line end
     {% line 2
-        \commandkey{university}%
-    } \hfill \ifcommandkey{grade}{% Grade field is optional (Can be left empty)
+        \it \commandkey{program}%
+    } \hfill {
         \commandkey{grade}%
-    }{} \\ % line end
-    {% line 3
-        \commandkey{college}
-    } \\ % line end
-    {% line 4
-        Relevant coursework: \commandkey{coursework}%
-    }% line end
+    }
 }%
-
-% ------------------------------------
 
 % -------------- Skills --------------
 \newenvironment{skillsSection}[1]{%
@@ -170,8 +151,7 @@
     skills
 ]{%
     {%
-        \bf \commandkey{category}:
-    } {%
+        \textbf{\commandkey{category}:}
         \commandkey{skills}%
     }
 }%
@@ -195,10 +175,13 @@
     location,
     duration
 ]{%
-    \textbf{%
-        \commandkey{company},
-        \commandkey{location}:
-        \commandkey{position}
+    {%
+        \bf \commandkey{company}
+    } \hfill {%
+        \bf \commandkey{location}
+    } \\% line end
+    {%
+        \it \commandkey{position}
     } \hfill {%
         \commandkey{duration}%
     }
@@ -209,13 +192,7 @@
 
 % ----------------- Project -------------
 \newkeycommand{\projectItem}[title, duration, keyHighlight]{%
-    \textbf{%
-        \commandkey{title}%
-    } \hfill {%
-        \commandkey{duration}%
-    } \\ {%
-        \commandkey{keyHighlight}%
-    }
+    \textbf{\commandkey{title}}
 }%
 
 % ----------------------------------------
