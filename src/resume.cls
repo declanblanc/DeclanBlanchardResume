@@ -21,13 +21,12 @@
     linkcolor=blue,
     urlcolor=black,
 }
-
-
 % Load the fontspec package to set the font
 \usepackage[scaled]{helvet} % Load the Helvetica font
 \renewcommand\familydefault{\sfdefault} % Set the  font family to sans-serif
 \usepackage[T1]{fontenc} % Use the T1 font encoding to ensure proper character rendering
-
+\usepackage[dvipsnames]{xcolor} % Add color support
+\definecolor{textgray}{gray}{0.2} % Medium gray color
 \pagestyle{empty}
 
 % -------------- README --------------
@@ -51,7 +50,7 @@
         \textbf{\MakeUppercase{#1}}
         \vspace{0.4em}
         \hrule
-        \vspace{0.4em}
+        \vspace{0em}
     \endgroup
 }%
 
@@ -116,7 +115,8 @@
 \newenvironment{educationSection}[1]{%
     \sectionTitle{#1}%
     \begin{list}{}{%
-        \setlength{\leftmargin}{0em}% no extra indent
+        \setlength{\leftmargin}{1.2em}% no extra indent
+        \setlength{\rightmargin}{1em}
     }%
     \item[]%
 }{%
@@ -130,12 +130,12 @@
     program,
 ]{% 
     {% line 1
-        \bf \commandkey{university}%
+        {\bf \commandkey{university}}%
     } \hfill {%
-        \bf \commandkey{graduation}%
+        \it \commandkey{graduation}%
     } \\ % line end
     {% line 2
-        \it \commandkey{program}%
+        {\it \commandkey{program}}%
     } \hfill {
         \commandkey{grade}%
     }
@@ -144,6 +144,13 @@
 % -------------- Skills --------------
 \newenvironment{skillsSection}[1]{%
     \sectionTitle{#1}%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{1em}%
+        \setlength{\rightmargin}{1em}
+    }%
+    \item[]%
+}{%
+    \end{list}%
 }%
 
 \newkeycommand{\skillItem}[
@@ -151,7 +158,7 @@
     skills
 ]{%
     {%
-        \textbf{\commandkey{category}:}
+        {\textbf{\commandkey{category}:}}
         \commandkey{skills}%
     }
 }%
@@ -162,7 +169,8 @@
 \newenvironment{experienceSection}[1]{%
     \sectionTitle{#1}%
     \begin{list}{}{ % List for each highlight in the section
-        \setlength{\leftmargin}{0em} % Margin within the section
+        \setlength{\leftmargin}{1em} % Margin within the section
+        \setlength{\rightmargin}{1em}
     }%
         \item[]%
     }{%
@@ -176,14 +184,14 @@
     duration
 ]{%
     {%
-        \bf \commandkey{company}
+        {\large\bf \commandkey{company}}
     } \hfill {%
-        \bf \commandkey{location}
+        \textcolor{textgray}{\it \commandkey{location}}
     } \\% line end
     {%
-        \it \commandkey{position}
+         {\it \commandkey{position}}
     } \hfill {%
-        \commandkey{duration}%
+        \textcolor{textgray}{\it \commandkey{duration}}%
     }
     \vspace{-0.5em}%
 }%
@@ -192,7 +200,7 @@
 
 % ----------------- Project -------------
 \newkeycommand{\projectItem}[title, duration, keyHighlight]{%
-    \textbf{\commandkey{title}}
+    {\textbf{\commandkey{title}}}
 }%
 
 % ----------------------------------------
