@@ -61,7 +61,7 @@
     \begingroup
         \hfill{\MakeUppercase{\Huge\bfseries #1}}\hfill
         \break
-        \vspace{-0.5em}
+        \vspace{0em}
     \endgroup
 }%
 
@@ -193,7 +193,7 @@
     } \hfill {%
         \textcolor{textgray}{\it \commandkey{duration}}%
     }
-    \vspace{-0.5em}%
+    \vspace{-0.25em}%
 }%
 
 % ---------------------------------------
