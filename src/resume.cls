@@ -135,8 +135,8 @@
     {% line 1
         {\bf \commandkey{university}}%
     } \hfill {%
-        \it \commandkey{graduation}%
-    } \\ % line end
+        \commandkey{graduation}%
+    } \\[0.15em] % line end
     {% line 2
         {\it \commandkey{program}}%
     } \hfill {
@@ -189,12 +189,12 @@
     {%
         {\large\bf \commandkey{company}}
     } \hfill {%
-        \textcolor{textgray}{\it \commandkey{location}}
-    } \\% line end
+        \textcolor{textgray}{\commandkey{location}}
+    } \\[0.15em]% line end
     {%
          {\it \commandkey{position}}
     } \hfill {%
-        \textcolor{textgray}{\it \commandkey{duration}}%
+        \textcolor{textgray}{\commandkey{duration}}%
     }
     \vspace{-0.25em}%
 }%
