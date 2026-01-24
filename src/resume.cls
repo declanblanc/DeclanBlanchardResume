@@ -203,7 +203,11 @@
 
 % ----------------- Project -------------
 \newkeycommand{\projectItem}[title, duration, keyHighlight]{%
-    {\textbf{\commandkey{title}}}
+    \textbf{%
+        \commandkey{title}%
+    } \hfill {%
+        \commandkey{duration}%
+    }
 }%
 
 % ----------------------------------------
