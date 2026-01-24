@@ -41,8 +41,8 @@
     \textbf{\Large\textbullet}
 }
 
-\newcommand{\email}[1]{\href{mailto:#1}{#1}}%
-\newcommand{\profilelink}[1]{\href{https://#1}{#1}}%
+\newcommand{\email}[1]{\link{mailto:#1}{#1}}%
+\newcommand{\profilelink}[1]{\link{https://#1}{#1}}%
 
 \newcommand{\isA}[1]{
     \expandafter\ifstrequal\expandafter{#1}{default}{}{a}
