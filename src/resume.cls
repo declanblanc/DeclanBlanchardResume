@@ -15,18 +15,21 @@
 \usepackage{keycommand}
 \usepackage{enumitem}
 \usepackage{xstring}
+\usepackage[dvipsnames]{xcolor} % Add color support
+\definecolor{textgray}{gray}{0.2} % Medium gray color
+\definecolor{linkblue}{HTML}{00238e} % Medium gray color
 \usepackage{hyperref}
+\usepackage[normalem]{ulem}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    urlcolor=black,
+    urlcolor=linkblue,
 }
+\newcommand{\link}[2]{\href{#1}{\uline{#2}}}
 % Load the fontspec package to set the font
 \usepackage[scaled]{helvet} % Load the Helvetica font
 \renewcommand\familydefault{\sfdefault} % Set the  font family to sans-serif
 \usepackage[T1]{fontenc} % Use the T1 font encoding to ensure proper character rendering
-\usepackage[dvipsnames]{xcolor} % Add color support
-\definecolor{textgray}{gray}{0.2} % Medium gray color
 \pagestyle{empty}
 
 % -------------- README --------------
