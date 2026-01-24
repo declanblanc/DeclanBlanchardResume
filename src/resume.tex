@@ -1,11 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Author: Vignesh Iyer                                 %
-% MS CSE ASU                                           %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% -------------- README --------------
-% Visit https://github.com/vgnshiyer/ASU-sparkysundevil-resume-template for comprehensive documenation.
-
 % -------------- Resume ---------------
 \documentclass{resume}
 
@@ -24,50 +16,51 @@
     \educationItem[
         university={New Jersey Institute of Technology},
         graduation={May 2026},
-        grade={3.8 GPA},
+        grade={\textbf{3.5 GPA}},
         program={Bachelor's, Computer Science}
+    ]
+    
+    \educationItem[
+        university={Raritan Valley Community College},
+        graduation={August 2024},
+        program={Associate's, Computer Science}
     ]
 \end{educationSection}
 
 % --------- Experience -----------
 \begin{experienceSection}{Experience}
-
+    
+    \experienceItem[
+        company={\link{https://www.patreon.com/}{Patreon}},
+        location={New York, NY},
+        position={Incoming Software Engineer},
+        duration={June 2026}
+    ]
 
     \experienceItem[
-        company={Patreon},
+        company={\link{https://www.patreon.com/}{Patreon}},
         location={New York, NY},
         position={Software Engineer Intern},
         duration={May 2025 - August 2025}
     ]
-    \begin{itemize}[itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
-        \item Built and deployed a full-stack ChatOps system used by the entire engineering department (\string~200 users)
-        \item Streamlined core workflows including canary deployments, remote server provisioning, and on-call lookups
-        \item Utilized Python, Kubernetes, AWS EKS, Terraform, CircleCI, and ArgoCD
-        \item Proactively extended project scope to eliminate manual handoffs and slash support ticket resolution times by \string~99\% for Product Support and Partner Managers
+    \begin{itemize}[itemsep=-6pt, leftmargin=2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
+        \item Streamlined operations for \textbf{200+} engineers by launching a \textbf{Python-based ChatOps} platform with \textbf{backend automation} for tasks such as canary deployments, remote server provisioning, and on-call lookups
+       \item Migrated the platform from an ad-hoc EC2 instance to \textbf{Kubernetes} (EKS), leveraging \textbf{Terraform}, \textbf{CircleCI}, \textbf{Argo CD}, and \textbf{Datadog} for comprehensive monitoring 
+        \item Collaborated cross-functionally to cut support-ticket lookup time from \textbf{minutes to seconds} by delivering a \textbf{Zendesk API} + \textbf{Slack SDK} workflow
     \end{itemize}
 
     \experienceItem[
         company={New Jersey Institute of Technology},
         location={Newark, NJ},
         position={Full Stack Developer},
-        duration={January 2025 - Present}
+        duration={January 2025 - May 2025}
     ]
-    \begin{itemize}[itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
-        \item Developed a schedule builder web app to serve 10,000+ NJIT students, enabling course planning with advanced features including multi-schedule comparison, automatic optimization, and semester to semester tracking
-        \item Drove continuous improvements in projects by documenting workflows, focusing on strong UI/UX principles, performance optimization, cross-browser compatibility, and ensuring smooth communication throughout the team
+    \begin{itemize}[itemsep=-6pt, leftmargin=2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
+        \item Developed a \link{https://sb.sigfrontline.com/}{course-planning web app} for \textbf{10,000+} students, including tools for schedule \textbf{comparison}, \textbf{optimization}, and \textbf{semester-by-semester tracking} 
+        \item Built with \textbf{React + Next.js (TypeScript)} and \textbf{Node.js backend}, backed by \textbf{MongoDB}
+        \item Managed client state with \textbf{Zustand} and standardized UI with \textbf{Mantine} and \textbf{Tailwind CSS}
     \end{itemize}
 
-
-    \experienceItem[
-        company={theCoderSchool},
-        location={Berkeley Heights, NJ},
-        position={Code Tutor},
-        duration={March 2024 - August 2024}
-    ]
-    \begin{itemize}[itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
-        \item Taught coding fundamentals to over 15 students across a wide variety of programming languages
-        \item Collaborated with educators to develop and deploy a browser extension that improved student focus by restricting non-educational features on learning platforms
-    \end{itemize}
 
 \end{experienceSection}
 
@@ -75,15 +68,15 @@
 \begin{skillsSection}{Skills}
     \skillItem[
         category={Languages},
-        skills={Python, C, C++, JavaScript, TypeScript, Java, PHP, SQL}
+        skills={Python, C, C++, JavaScript, TypeScript, SQL}
     ] \\
     \skillItem[
-        category={Full-Stack Development},
-        skills={React, Next.js, Vue, Node.js, MongoDB, Zustand, Tailwind}
+        category={Full Stack},
+        skills={React, Next.js, Vue, Node.js, MongoDB, Zustand, Tailwind CSS, Slack SDK, Zendesk API}
     ] \\
     \skillItem[
         category={DevOps \& Tooling},
-        skills={AWS, EKS, ECR, Terraform, ArgoCD, CircleCI, Linux/Unix, Git, Bash}
+        skills={AWS, Datadog, Kubernetes, Terraform, Argo CD, CircleCI, Git, Bash}
     ]
 \end{skillsSection}
 
@@ -91,11 +84,12 @@
 \begin{experienceSection}{Projects}
     \projectItem[
         title={Mini C-Like Programming Language},
+        duration={Fall 2024},
     ]
     \vspace{-0.5em}
-    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
-        \item Built a custom programming language using C++. Optimized memory management and algorithmic complexity to ensure efficient parsing and tokenization
-        \item Created 50+ comprehensive test cases to ensure 100\% reliability across core language functions, showcasing accurate parsing, performance, and scalability for future enhancements
+    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
+        \item Implemented lexer and recursive descent parser in \textbf{C++} with careful memory management
+        \item Compiled and tested on \textbf{Linux} using \textbf{Bash} scripts to manage \textbf{50+} test cases, ensuring robust functionality 
     \end{itemize}
 \end{experienceSection}
 
@@ -105,19 +99,23 @@
     \projectItem[
         title={Student Senate Committee for Student Affairs},
     ]
-    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
+    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
         \vspace{-0.5em}
-        \item Led student advocacy initiatives resulting in improved campus resources for 10,000+ students
-        \item Collaborated with university leadership to enhance student engagement and policy implementation to improve campus life
+        \item Championed student-focused initiatives including upgraded bathroom amenities, extended gym hours, and commuter-friendly cafeteria equipment
+        \item Facilitated campus events in collaboration with university leaders
     \end{itemize}
-    \vspace{-0.5em}
+    \vspace{0em}
     \projectItem[
         title={Association for Computing Machinery},
     ]
-    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=1.2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
+    \begin{itemize}[topsep=0pt, itemsep=-6pt, leftmargin=2em, rightmargin=0.8em, before=\raggedright, after=\normalfont]
         \vspace{-0.5em}
-        \item Participated in workshops, coding competitions, and speaker sessions to deepen technical skills and expand professional network
+        \item Participated in advanced workshops, coding competitions, and industry speaker sessions
     \end{itemize}
+    \vspace{0em}
+    
+
+
 \end{experienceSection}
 
 \end{document}
