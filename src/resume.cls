@@ -199,15 +199,29 @@
     \vspace{-0.25em}%
 }%
 
+\newkeycommand{\experienceSubItem}[
+    position,
+    duration
+]{%
+    \\[0.2em]
+    {%
+         {\it \commandkey{position}}
+    } \hfill {%
+        \textcolor{textgray}{\commandkey{duration}}%
+    }
+    \vspace{-0.25em}%
+}%
+
 % ---------------------------------------
 
 % ----------------- Project -------------
 \newkeycommand{\projectItem}[title, duration, keyHighlight]{%
     \textbf{%
         \commandkey{title}%
-    } \hfill {%
-        \commandkey{duration}%
-    }
+    }%
+    \expandafter\ifstrequal\expandafter{\commandkey{keyHighlight}}{default}{}{%
+        \\ {\it \commandkey{keyHighlight}}%
+    }%
 }%
 
 % ----------------------------------------
